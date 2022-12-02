@@ -1,6 +1,6 @@
 # Flask Elasticsearch
 
-This implementation is of a search feature for users to find content in an app using natural language.
+An implementation of full text search for users to find information on a site using natural language.
 
 ## About Elasticsearch
 
