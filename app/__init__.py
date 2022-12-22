@@ -36,7 +36,7 @@ def create_app(config_class=Config):
     from app.api import bp as api_bp
     app.register_blueprint(api_bp, url_prefix='/api')
 
-    app.elasticsearch = Elasticsearch([app.config['ELASTICSEARCH_URL']]) \
+    app.elasticsearch = Elasticsearch([app.config['ELASTICSEARCH_URL']], basic_auth=(app.config['ELASTIC_USER'], app.config['ELASTIC_TOKEN']), verify_certs=False) \
         if app.config['ELASTICSEARCH_URL'] else None
 
     if not app.debug and not app.testing:

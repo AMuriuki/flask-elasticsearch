@@ -7,3 +7,5 @@ MAIL_USERNAME=
 MAIL_PASSWORD=
 ELASTICSEARCH_URL=https://localhost:9200
 DATABASE_URL=postgresql://elk:elk@localhost:5432/elk
+ELASTIC_TOKEN=WxsvC_8nPC8ySMuZnND+
+ELASTIC_USER=elastic
