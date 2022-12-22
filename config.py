@@ -18,3 +18,4 @@ class Config(object):
     ADMINS = ['amuriuki@olam-erp.com']
     ELASTIC_USER = os.environ.get('ELASTIC_USER')
     ELASTIC_TOKEN = os.environ.get('ELASTIC_TOKEN')
+    PRODUCTS_PER_PAGE = 10

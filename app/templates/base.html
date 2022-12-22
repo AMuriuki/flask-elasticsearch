@@ -15,6 +15,16 @@
         <a href="{{ url_for('auth.logout') }}">Logout</a>
         {% endif %}
         <a href="{{ url_for('main.test_email') }}">Test Email</a>
+        <br><br>
+        {% if g.search_form %}
+        <form class="navbar-form navbar-left" method="get" action="{{ url_for('main.search') }}">
+            {{ g.search_form.hidden_tag() }}
+            <div class="form-group">
+                {{ g.search_form.q(size=20, class='form-control',
+                placeholder=g.search_form.q.label.text) }}
+            </div>
+        </form>
+        {% endif %}
     </div>
     <hr>
     {% with messages = get_flashed_messages() %}
