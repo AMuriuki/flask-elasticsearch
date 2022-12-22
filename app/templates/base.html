@@ -2,18 +2,19 @@
 <html>
 
 <head>
-    <title>{{title}} - Flask Boilerplate</title>
+    <title>{{title}} - Flask Elasticsearch</title>
 </head>
 
 <body>
     <div>
-        Flask Boilerplate:
-        <a href="{{ url_for('index') }}">Home</a>
+        Flask Elasticsearch:
+        <a href="{{ url_for('main.index') }}">Home</a>
         {% if current_user.is_anonymous %}
-        <a href="{{ url_for('login') }}">Login</a>
+        <a href="{{ url_for('auth.login') }}">Login</a>
         {% else %}
-        <a href="{{ url_for('logout') }}">Logout</a>
+        <a href="{{ url_for('auth.logout') }}">Logout</a>
         {% endif %}
+        <a href="{{ url_for('main.test_email') }}">Test Email</a>
     </div>
     <hr>
     {% with messages = get_flashed_messages() %}

@@ -1,0 +1,7 @@
+Dear {{ user.username }},
+
+This is a test message
+
+Sincerely,
+
+The Flask Elasticsearch Team

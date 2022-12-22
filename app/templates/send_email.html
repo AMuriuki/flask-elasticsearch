@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Test Email</h1>
+{% with messages = get_flashed_messages() %}
+{% for message in messages %}
+<p>{{ message }}</p>
+{% endfor %}
+{% endwith %}
+<form action="" method="post">
+    <p>Your email: <input type="text" name="recipient"></p>
+    <p><input type="submit" value="Send a Test Email"></p>
+</form>
+{% endblock %}
