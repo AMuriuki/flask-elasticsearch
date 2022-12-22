@@ -1,4 +1,4 @@
-FLASK_APP=app.py
+FLASK_APP=elk.py
 FLASK_DEBUG=1
 MAIL_SERVER=
 MAIL_PORT=
@@ -6,3 +6,4 @@ MAIL_USE_TLS=
 MAIL_USERNAME=
 MAIL_PASSWORD=
 ELASTICSEARCH_URL=https://localhost:9200
+DATABASE_URL=postgresql://elk:elk@localhost:5432/elk

@@ -29,6 +29,8 @@ class PaginatedAPIMixin(object):
 
 
 class Product(db.Model, PaginatedAPIMixin):
+    __searchable__ = ['title', 'description', 'brand', 'store']
+
     id = db.Column(db.Integer, primary_key=True)
     product_category = db.Column(
         db.Integer, db.ForeignKey('product_category.id'))
@@ -72,6 +74,8 @@ class Product(db.Model, PaginatedAPIMixin):
 
 
 class ProductCategory(db.Model):
+    __searchable__ = ['name']
+
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(120), unique=True)
     products = db.relationship('Product', backref='category', lazy='dynamic')
@@ -94,13 +98,19 @@ class ProductCategory(db.Model):
 
 
 class ProductType(db.Model):
+    __searchable__ = ['name']
+
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(120), unique=True)
     products = db.relationship('Product', backref='type', lazy='dynamic')
-    parent_id = db.Column(db.Integer, db.ForeignKey('product_category.id'))
+    category_id = db.Column(db.Integer, db.ForeignKey('product_category.id'))
+    collection_id = db.Column(
+        db.Integer, db.ForeignKey('product_collection.id'))
 
 
 class ProductCollection(db.Model):
+    __searchable__ = ['name']
+
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(120), unique=True)
     products = db.relationship('Product', backref='collection', lazy='dynamic')
