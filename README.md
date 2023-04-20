@@ -18,7 +18,9 @@ I've implemented all the text indexing and searching functions in a way that is 
 ### Installing Elasticsearch
 The documentation for Elasticsearch has an [Installation](https://www.elastic.co/guide/en/elasticsearch/reference/current/install-elasticsearch.html) page with detailed information on how to install it.
 
-To verify that you've installed Elasticsearch on your computer run `http:localhost:9200` on your browser. This should return some basic information abou the service in JSON format.
+You can also read through how I set it up on my pc - [Setting-up-elastic-search-locally](https://github.com/AMuriuki/flask-elasticsearch/wiki/Setting-up-elastic-search-locally). 
+
+To verify that you've installed Elasticsearch on your computer run `https:localhost:9200` on your browser. This should return some basic information abou the service in JSON format.
 
 ### Project setup
 
